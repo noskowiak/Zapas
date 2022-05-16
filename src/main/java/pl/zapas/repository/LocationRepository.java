@@ -1,4 +1,8 @@
 package pl.zapas.repository;
 
-public interface LocationRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import pl.zapas.entity.Location;
+
+public interface LocationRepository extends JpaRepository<Location, Long> {
+
 }

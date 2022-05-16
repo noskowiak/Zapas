@@ -1,4 +1,8 @@
 package pl.zapas.repository.stock;
 
-public interface StockGarageRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import pl.zapas.entity.stock.StockGarage;
+
+public interface StockGarageRepository extends JpaRepository<StockGarage, Long> {
+
 }

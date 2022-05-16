@@ -1,4 +1,10 @@
 package pl.zapas.repository.stock;
 
-public interface StockAuctionRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import pl.zapas.entity.stock.StockAuction;
+
+import java.util.List;
+
+public interface StockAuctionRepository extends JpaRepository<StockAuction, Long> {
+
 }
