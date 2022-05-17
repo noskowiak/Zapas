@@ -7,4 +7,8 @@ import java.util.List;
 
 public interface StockAuctionRepository extends JpaRepository<StockAuction, Long> {
 
+    List<StockAuction> findStockAuctionsByProductSymbol(String symbol);
+
+    List<StockAuction> findStockAuctionsByLocationName(String name);
+
 }
