@@ -15,13 +15,12 @@ import java.util.List;
 public class MonthlySaleService {
 
     private final MonthlySaleRepository monthlySaleRepository;
-    private final Product product;
 
     public List<MonthlySale> findAll() { return monthlySaleRepository.findAll();}
 
     public MonthlySale loadMonthlyBySymbol(final String symbol) {
         return monthlySaleRepository
-                .findMonthlySaleByProduct(symbol);
+                .findMonthlySaleByProductSymbol(symbol);
     }
 
    /* public String loadProductBySymbol(final String symbol) {

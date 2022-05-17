@@ -18,6 +18,6 @@ public class MonthlySale {
     private Long quantity;
 
     @OneToOne
-    private Product products;
+    private Product product;
 
 }

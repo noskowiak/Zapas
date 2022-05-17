@@ -9,6 +9,6 @@ import java.util.Optional;
 public interface MonthlySaleRepository extends JpaRepository<MonthlySale, String> {
    // Optional<Product> findProductBySymbol(String symbol);
 
-    MonthlySale findMonthlySaleByProduct(String symbol);
+    MonthlySale findMonthlySaleByProductSymbol(String Symbol);
 
 }

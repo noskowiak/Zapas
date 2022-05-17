@@ -5,5 +5,5 @@ import pl.zapas.entity.subiekt.StockSubiekt;
 
 public interface StockSubiektRepository extends JpaRepository<StockSubiekt, String> {
 
-    StockSubiekt findStockSubiektByProduct(String symbol);
+    StockSubiekt findStockSubiektByProductSymbol(String symbol);
 }
