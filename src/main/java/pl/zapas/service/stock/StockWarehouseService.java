@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
 
 @Service
 @RequiredArgsConstructor
-public class StockWareHouseService {
+public class StockWarehouseService {
 
     private final StockWarehouseRepository stockWarehouseRepository;
 
