@@ -21,4 +21,10 @@ public class UserService {
         return userRepository.findById(id).orElseThrow();
     }
 
+    public User save(User user) {return userRepository.save(user);}
+
+
+
+    // TODO: 17.05.2022  saveUser, activeUser, deactivateUser, updateName, updateLastName
+
 }

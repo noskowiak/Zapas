@@ -18,7 +18,12 @@ public class LocationService {
         return locationRepository.findAll();
     }
 
-    public Location findLocationById(Long id) {
-        return locationRepository.findById(id).orElseThrow();
-    }
+
+
+    public Location findLocationById(Long id) {return locationRepository.findById(id).orElseThrow();}
+
+    public Location save(Location location) {return locationRepository.save(location);}
+
+    // TODO: 17.05.2022 saveLocation, updateName 
+
 }
