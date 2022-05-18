@@ -14,7 +14,11 @@ public class LocationService {
 
     private final LocationRepository locationRepository;
 
-    public List<Location> findAll() {return locationRepository.findAll();}
+    public List<Location> findAll() {
+        return locationRepository.findAll();
+    }
 
-    public Location findLocationById(Long id) {return locationRepository.findById(id).orElseThrow();}
+    public Location findLocationById(Long id) {
+        return locationRepository.findById(id).orElseThrow();
+    }
 }

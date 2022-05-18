@@ -11,4 +11,5 @@ public interface StockAuctionRepository extends JpaRepository<StockAuction, Long
 
     List<StockAuction> findStockAuctionsByLocationName(String name);
 
+
 }

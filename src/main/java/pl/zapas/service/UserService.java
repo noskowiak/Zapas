@@ -1,6 +1,5 @@
 package pl.zapas.service;
 
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.zapas.entity.User;
@@ -14,8 +13,12 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public List<User> findAll() { return userRepository.findAll();}
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
 
-    public User findUserById(Long id) {return userRepository.findById(id).orElseThrow();}
+    public User findUserById(Long id) {
+        return userRepository.findById(id).orElseThrow();
+    }
 
 }
