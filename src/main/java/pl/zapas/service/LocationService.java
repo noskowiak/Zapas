@@ -14,11 +14,16 @@ public class LocationService {
 
     private final LocationRepository locationRepository;
 
-    public List<Location> findAll() {return locationRepository.findAll();}
+    public List<Location> findAll() {
+        return locationRepository.findAll();
+    }
+
+
 
     public Location findLocationById(Long id) {return locationRepository.findById(id).orElseThrow();}
 
     public Location save(Location location) {return locationRepository.save(location);}
 
     // TODO: 17.05.2022 saveLocation, updateName 
+
 }

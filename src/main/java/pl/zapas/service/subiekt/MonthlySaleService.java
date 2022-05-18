@@ -16,7 +16,9 @@ public class MonthlySaleService {
 
     private final MonthlySaleRepository monthlySaleRepository;
 
-    public List<MonthlySale> findAll() { return monthlySaleRepository.findAll();}
+    public List<MonthlySale> findAll() {
+        return monthlySaleRepository.findAll();
+    }
 
     public MonthlySale loadMonthlyBySymbol(final String symbol) {
         return monthlySaleRepository

@@ -14,7 +14,9 @@ public class StockSubiektService {
 
     private final StockSubiektRepository stockSubiektRepository;
 
-    public List<StockSubiekt> findAll() {return stockSubiektRepository.findAll();}
+    public List<StockSubiekt> findAll() {
+        return stockSubiektRepository.findAll();
+    }
 
     public StockSubiekt loadProductBySymbol(final String symbol) {
         return stockSubiektRepository.findStockSubiektByProductSymbol(symbol);
