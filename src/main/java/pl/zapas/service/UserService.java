@@ -9,9 +9,12 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class UserService {
+public class UserService  {
 
     private final UserRepository userRepository;
+
+
+
 
     public List<User> findAll() {
         return userRepository.findAll();
@@ -21,10 +24,11 @@ public class UserService {
         return userRepository.findById(id).orElseThrow();
     }
 
-    public User save(User user) {return userRepository.save(user);}
+    public User save(User user) {
+            return userRepository.save(user);
 
 
-
+    }
     // TODO: 17.05.2022  saveUser, activeUser, deactivateUser, updateName, updateLastName
 
 }
