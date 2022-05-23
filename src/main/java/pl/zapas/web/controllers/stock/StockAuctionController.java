@@ -3,6 +3,7 @@ package pl.zapas.web.controllers.stock;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pl.zapas.dtos.stock.StockAuctionDto;
 import pl.zapas.entity.stock.StockAuction;
 import pl.zapas.service.stock.StockAuctionService;
 
@@ -22,7 +23,7 @@ public class StockAuctionController {
     }
 
     @GetMapping
-    public ResponseEntity<List<StockAuction>> findAllStockAuctions() {
+    public ResponseEntity<List<StockAuctionDto>> findAllStockAuctions() {
         return ResponseEntity.ok(stockAuctionService.findAll());
     }
 
