@@ -15,7 +15,7 @@ public class StockSubiekt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long quantity;
+    private Long stock;
 
     @OneToOne
     private Product product;

@@ -15,7 +15,7 @@ public class MonthlySale {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long quantity;
+    private Long sale30Days;
 
     @OneToOne
     private Product product;

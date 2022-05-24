@@ -3,6 +3,7 @@ package pl.zapas.web.controllers.stock;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pl.zapas.dtos.stock.StockDto;
 import pl.zapas.entity.stock.StockWarehouse;
 import pl.zapas.service.stock.StockWarehouseService;
 
@@ -22,22 +23,22 @@ public class StockWarehouseController {
     }
 
     @GetMapping
-    public ResponseEntity<List<StockWarehouse>> findAllStockWarehouse() {
+    public ResponseEntity<List<StockDto>> findAllStockWarehouse() {
         return ResponseEntity.ok(stockWarehouseService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<StockWarehouse> findStockWarehouseById(@PathVariable Long id) {
+    public ResponseEntity<StockDto> findStockWarehouseById(@PathVariable Long id) {
         return ResponseEntity.ok(stockWarehouseService.findStockWarehouseById(id));
     }
 
     @GetMapping("/{symbol}")
-    public ResponseEntity<List<StockWarehouse>> findStockWarehouseBySymbol(@PathVariable String symbol) {
+    public ResponseEntity<List<StockDto>> findStockWarehouseBySymbol(@PathVariable String symbol) {
         return ResponseEntity.ok(stockWarehouseService.findStockStockWarehouseBySymbol(symbol));
     }
 
     @GetMapping("/{location}")
-    public ResponseEntity<List<StockWarehouse>> findStockWarehouseByLocation(@PathVariable String location) {
+    public ResponseEntity<List<StockDto>> findStockWarehouseByLocation(@PathVariable String location) {
         return ResponseEntity.ok(stockWarehouseService.findStockWarehouseByLocationName(location));
     }
 

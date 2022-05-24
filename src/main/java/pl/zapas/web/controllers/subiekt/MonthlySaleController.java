@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pl.zapas.dtos.subiekt.MonthlySaleDto;
 import pl.zapas.entity.subiekt.MonthlySale;
 import pl.zapas.service.subiekt.MonthlySaleService;
 import java.util.List;
@@ -19,11 +20,11 @@ public class MonthlySaleController {
 
 
     @GetMapping
-    public ResponseEntity<List<MonthlySale>> getAllMonthlySale() {return ResponseEntity.ok(monthlySaleService.findAll());}
+    public ResponseEntity<List<MonthlySaleDto>> getAllMonthlySale() {return ResponseEntity.ok(monthlySaleService.findAll());}
 
 
     @GetMapping("/{symbol}")
-    public ResponseEntity<MonthlySale> getMonthlySaleBySymbol(@PathVariable String symbol) {
+    public ResponseEntity<MonthlySaleDto> getMonthlySaleBySymbol(@PathVariable String symbol) {
         return ResponseEntity.ok(monthlySaleService.loadMonthlyBySymbol(symbol));
     }
 

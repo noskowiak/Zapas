@@ -3,6 +3,7 @@ package pl.zapas.web.controllers.stock;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pl.zapas.dtos.stock.StockDto;
 import pl.zapas.entity.stock.StockGarage;
 import pl.zapas.repository.stock.StockGarageRepository;
 import pl.zapas.service.stock.StockGarageService;
@@ -23,22 +24,22 @@ public class StockGarageController {
     }
 
     @GetMapping
-    public ResponseEntity<List<StockGarage>> findAllStockGarage() {
+    public ResponseEntity<List<StockDto>> findAllStockGarage() {
         return ResponseEntity.ok(stockGarageService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<StockGarage> findStockGarageById(@PathVariable Long id) {
+    public ResponseEntity<StockDto> findStockGarageById(@PathVariable Long id) {
         return ResponseEntity.ok(stockGarageService.findStockGarageById(id));
     }
 
     @GetMapping("/{symbol}")
-    public ResponseEntity<List<StockGarage>> findStockGarageBySymbol(@PathVariable String symbol) {
+    public ResponseEntity<List<StockDto>> findStockGarageBySymbol(@PathVariable String symbol) {
         return ResponseEntity.ok(stockGarageService.findStockGarageBySymbol(symbol));
     }
 
     @GetMapping("/{location}")
-    public ResponseEntity<List<StockGarage>> findStockGarageByLocation(@PathVariable String location) {
+    public ResponseEntity<List<StockDto>> findStockGarageByLocation(@PathVariable String location) {
         return ResponseEntity.ok(stockGarageService.findStockGaragesByLocationName(location));
     }
 

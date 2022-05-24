@@ -3,7 +3,7 @@ package pl.zapas.web.controllers.stock;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.zapas.dtos.stock.StockAuctionDto;
+import pl.zapas.dtos.stock.StockDto;
 import pl.zapas.entity.stock.StockAuction;
 import pl.zapas.service.stock.StockAuctionService;
 
@@ -23,22 +23,22 @@ public class StockAuctionController {
     }
 
     @GetMapping
-    public ResponseEntity<List<StockAuctionDto>> findAllStockAuctions() {
+    public ResponseEntity<List<StockDto>> findAllStockAuctions() {
         return ResponseEntity.ok(stockAuctionService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<StockAuction> findStockAuctionById(@PathVariable Long id) {
+    public ResponseEntity<StockDto> findStockAuctionById(@PathVariable Long id) {
         return ResponseEntity.ok(stockAuctionService.findStockAuctionById(id));
     }
 
     @GetMapping("/{symbol}")
-    public ResponseEntity<List<StockAuction>> findStockAuctionBySymbol(@PathVariable String symbol) {
+    public ResponseEntity<List<StockDto>> findStockAuctionBySymbol(@PathVariable String symbol) {
         return ResponseEntity.ok(stockAuctionService.findStockAuctionsBySymbol(symbol));
     }
 
     @GetMapping("/{location}")
-    public ResponseEntity<List<StockAuction>> findStockAuctionByLocation(@PathVariable String location) {
+    public ResponseEntity<List<StockDto>> findStockAuctionByLocation(@PathVariable String location) {
         return ResponseEntity.ok(stockAuctionService.findStockAuctionsByLocationName(location));
     }
 

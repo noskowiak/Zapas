@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pl.zapas.dtos.subiekt.StockSubiektDto;
 import pl.zapas.entity.subiekt.StockSubiekt;
 import pl.zapas.service.subiekt.StockSubiektService;
 
@@ -19,10 +20,10 @@ public class StockSubiektController {
     private final StockSubiektService stockSubiektService;
 
     @GetMapping
-    public ResponseEntity<List<StockSubiekt>> gatAllStockSubiekt() {return ResponseEntity.ok(stockSubiektService.findAll());}
+    public ResponseEntity<List<StockSubiektDto>> gatAllStockSubiekt() {return ResponseEntity.ok(stockSubiektService.findAll());}
 
     @GetMapping("/{symbol}")
-    public ResponseEntity<StockSubiekt> getStockSubiektBySymbol(@PathVariable String symbol) {
+    public ResponseEntity<StockSubiektDto> getStockSubiektBySymbol(@PathVariable String symbol) {
         return ResponseEntity.ok(stockSubiektService.loadProductBySymbol(symbol));
     }
 

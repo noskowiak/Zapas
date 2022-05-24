@@ -5,10 +5,10 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
-public class StockAuctionDto {
+public class StockDto {
 
-    private Long quantity;
     private String productSymbol;
     private String productName;
+    private Long quantity;
     private String locationName;
 }

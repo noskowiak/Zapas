@@ -3,6 +3,7 @@ package pl.zapas.web.controllers.stock;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pl.zapas.dtos.stock.StockDto;
 import pl.zapas.entity.stock.StockBasement;
 import pl.zapas.service.stock.StockBasementService;
 
@@ -22,22 +23,22 @@ public class StockBasementController {
     }
 
     @GetMapping
-    public ResponseEntity<List<StockBasement>> findAllStockBasement() {
+    public ResponseEntity<List<StockDto>> findAllStockBasement() {
         return ResponseEntity.ok(stockBasementService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<StockBasement> findStockBasementById(@PathVariable Long id) {
+    public ResponseEntity<StockDto> findStockBasementById(@PathVariable Long id) {
         return ResponseEntity.ok(stockBasementService.findStockBasementById(id));
     }
 
     @GetMapping("/{symbol}")
-    public ResponseEntity<List<StockBasement>> findStockBasementBySymbol(@PathVariable String symbol) {
+    public ResponseEntity<List<StockDto>> findStockBasementBySymbol(@PathVariable String symbol) {
         return ResponseEntity.ok(stockBasementService.findStockBasementsBySymbol(symbol));
     }
 
     @GetMapping("/{location}")
-    public ResponseEntity<List<StockBasement>> findStockBasementByLocation(@PathVariable String location) {
+    public ResponseEntity<List<StockDto>> findStockBasementByLocation(@PathVariable String location) {
         return ResponseEntity.ok(stockBasementService.findStockBasementsByLocationName(location));
     }
 
