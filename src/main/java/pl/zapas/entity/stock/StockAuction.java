@@ -19,10 +19,12 @@ public class StockAuction {
     private Long id;
     private Long quantity;
 
-    @ManyToOne
+    @ManyToOne(targetEntity=Product.class)
+    @JoinColumn(name = "product_id")
     private Product product;
 
-    @ManyToOne
+    @ManyToOne(targetEntity=Location.class)
+    @JoinColumn(name = "location_id")
     private Location location;
 
 }
