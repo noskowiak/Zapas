@@ -3,7 +3,7 @@ package pl.zapas.web.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.zapas.entity.User;
+import pl.zapas.entity.primary.User;
 import pl.zapas.service.UserService;
 
 import java.util.List;

@@ -2,9 +2,7 @@ package pl.zapas.mapper.stock;
 
 import org.springframework.stereotype.Component;
 import pl.zapas.dtos.stock.StockDto;
-import pl.zapas.entity.Location;
-import pl.zapas.entity.stock.*;
-import pl.zapas.entity.subiekt.Product;
+import pl.zapas.entity.primary.stock.*;
 
 @Component
 public class StockMapper {

@@ -6,8 +6,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import pl.zapas.entity.User;
-import pl.zapas.repository.UserRepository;
+import pl.zapas.entity.primary.User;
+import pl.zapas.repository.primary.UserRepository;
 import pl.zapas.service.UserService;
 
 import java.util.NoSuchElementException;

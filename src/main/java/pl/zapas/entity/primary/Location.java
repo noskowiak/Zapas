@@ -1,10 +1,8 @@
-package pl.zapas.entity.stock;
+package pl.zapas.entity.primary;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pl.zapas.entity.Location;
-import pl.zapas.entity.subiekt.Product;
 
 import javax.persistence.*;
 
@@ -12,17 +10,11 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class StockBasement {
+public class Location {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long quantity;
-
-    @ManyToOne
-    private Product product;
-
-    @ManyToOne
-    private Location location;
+    private String name;
 
 }

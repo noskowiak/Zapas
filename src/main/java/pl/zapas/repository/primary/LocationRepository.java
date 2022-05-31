@@ -1,10 +1,10 @@
-package pl.zapas.repository;
+package pl.zapas.repository.primary;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.zapas.entity.Location;
+import org.springframework.stereotype.Repository;
+import pl.zapas.entity.primary.Location;
 
-import java.util.List;
-
+@Repository
 public interface LocationRepository extends JpaRepository<Location, Long> {
 
 }

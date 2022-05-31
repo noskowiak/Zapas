@@ -4,8 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.zapas.dtos.stock.StockDto;
-import pl.zapas.entity.stock.StockGarage;
-import pl.zapas.repository.stock.StockGarageRepository;
+import pl.zapas.entity.primary.stock.StockGarage;
 import pl.zapas.service.stock.StockGarageService;
 
 import java.util.List;

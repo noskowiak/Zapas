@@ -3,9 +3,9 @@ package pl.zapas.service.stock;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.zapas.dtos.stock.StockDto;
-import pl.zapas.entity.stock.StockBasement;
+import pl.zapas.entity.primary.stock.StockBasement;
 import pl.zapas.mapper.stock.StockMapper;
-import pl.zapas.repository.stock.StockBasementRepository;
+import pl.zapas.repository.primary.stock.StockBasementRepository;
 
 import java.util.List;
 import java.util.NoSuchElementException;

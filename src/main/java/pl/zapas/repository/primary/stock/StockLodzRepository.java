@@ -1,7 +1,7 @@
-package pl.zapas.repository.stock;
+package pl.zapas.repository.primary.stock;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.zapas.entity.stock.StockLodz;
+import pl.zapas.entity.primary.stock.StockLodz;
 
 import java.util.List;
 

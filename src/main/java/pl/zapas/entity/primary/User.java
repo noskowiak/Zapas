@@ -1,4 +1,4 @@
-package pl.zapas.entity;
+package pl.zapas.entity.primary;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

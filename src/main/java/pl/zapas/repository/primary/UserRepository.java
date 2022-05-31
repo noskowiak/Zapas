@@ -1,7 +1,7 @@
-package pl.zapas.repository;
+package pl.zapas.repository.primary;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.zapas.entity.User;
+import pl.zapas.entity.primary.User;
 
 
 

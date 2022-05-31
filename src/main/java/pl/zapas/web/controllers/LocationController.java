@@ -3,7 +3,7 @@ package pl.zapas.web.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.zapas.entity.Location;
+import pl.zapas.entity.primary.Location;
 import pl.zapas.service.LocationService;
 
 import java.util.List;

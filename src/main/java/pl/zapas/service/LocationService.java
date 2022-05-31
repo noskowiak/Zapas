@@ -3,8 +3,8 @@ package pl.zapas.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import pl.zapas.entity.Location;
-import pl.zapas.repository.LocationRepository;
+import pl.zapas.entity.primary.Location;
+import pl.zapas.repository.primary.LocationRepository;
 
 import java.util.List;
 
@@ -12,7 +12,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class LocationService {
 
+
+
     private final LocationRepository locationRepository;
+
 
     public List<Location> findAll() {
         return locationRepository.findAll();

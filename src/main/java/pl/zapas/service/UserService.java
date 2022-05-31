@@ -2,8 +2,8 @@ package pl.zapas.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import pl.zapas.entity.User;
-import pl.zapas.repository.UserRepository;
+import pl.zapas.entity.primary.User;
+import pl.zapas.repository.primary.UserRepository;
 
 import java.util.List;
 

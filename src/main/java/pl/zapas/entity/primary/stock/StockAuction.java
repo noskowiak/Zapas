@@ -1,9 +1,9 @@
-package pl.zapas.entity.stock;
+package pl.zapas.entity.primary.stock;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pl.zapas.entity.Location;
+import pl.zapas.entity.primary.Location;
 import pl.zapas.entity.subiekt.Product;
 
 import javax.persistence.*;
