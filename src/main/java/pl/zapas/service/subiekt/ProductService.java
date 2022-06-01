@@ -3,6 +3,7 @@ package pl.zapas.service.subiekt;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.zapas.dtos.subiekt.ProductDto;
+import pl.zapas.entity.Location;
 import pl.zapas.entity.subiekt.Product;
 import pl.zapas.repository.subiekt.ProductRepository;
 
@@ -29,4 +30,7 @@ public class ProductService {
         return productRepository.findProductBySymbol(symbol);
     }
 
+    public Product save(Product product) {
+        return productRepository.save(product);
+    }
 }

@@ -32,10 +32,5 @@ public class MonthlySaleService {
         return monthlySaleMapper.toDto(monthlySaleRepository.findMonthlySaleByProductSymbol(symbol));
     }
 
-   /* public String loadProductBySymbol(final String symbol) {
-        return monthlySaleRepository.findProductBySymbol(symbol)
-                .map(Product::getSymbol)
-                .orElseThrow();
-    }*/
 
 }
