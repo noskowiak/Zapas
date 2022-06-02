@@ -2,10 +2,11 @@ package pl.zapas.service.subiekt;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import pl.zapas.dtos.subiekt.MonthlySaleDto;
 import pl.zapas.dtos.subiekt.ProductDto;
-import pl.zapas.entity.Location;
 import pl.zapas.entity.subiekt.Product;
 import pl.zapas.repository.subiekt.ProductRepository;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 public class ProductService {
 
     private final ProductRepository productRepository;
+
 
     public List<ProductDto> findAll() {
         return productRepository.findAll()
@@ -33,4 +35,6 @@ public class ProductService {
     public Product save(Product product) {
         return productRepository.save(product);
     }
+
+
 }
