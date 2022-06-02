@@ -20,4 +20,8 @@ public class StockSubiekt {
     @OneToOne
     private Product product;
 
+    public StockSubiekt(Long stock, Product product) {
+        this.stock = stock;
+        this.product = product;
+    }
 }

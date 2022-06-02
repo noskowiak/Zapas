@@ -27,4 +27,8 @@ public class StockSubiektController {
         return ResponseEntity.ok(stockSubiektService.loadProductBySymbol(symbol));
     }
 
+    @GetMapping("/saveStockSubiekt")
+    public ResponseEntity<StockSubiektDto[]> saveStockSubiekt() {
+        return ResponseEntity.ok(stockSubiektService.save());
+    }
 }

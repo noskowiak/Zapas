@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pl.zapas.dtos.subiekt.MonthlySaleDto;
 import pl.zapas.dtos.subiekt.ProductDto;
 import pl.zapas.entity.subiekt.Product;
 import pl.zapas.service.subiekt.ProductService;
@@ -30,4 +31,8 @@ private  final ProductService productService;
         return ResponseEntity.ok(productService.loadProductBySymbol(symbol));
     }
 
+    @GetMapping("/saveProduct")
+    public ResponseEntity<ProductDto[]> saveMonthlySale() {
+        return ResponseEntity.ok(productService.save());
+    }
 }

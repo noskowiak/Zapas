@@ -1,14 +1,13 @@
 package pl.zapas.web.controllers.subiekt;
 
+
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.zapas.dtos.subiekt.MonthlySaleDto;
-import pl.zapas.entity.subiekt.MonthlySale;
 import pl.zapas.service.subiekt.MonthlySaleService;
+
 import java.util.List;
 
 @RestController
@@ -20,12 +19,19 @@ public class MonthlySaleController {
 
 
     @GetMapping
-    public ResponseEntity<List<MonthlySaleDto>> getAllMonthlySale() {return ResponseEntity.ok(monthlySaleService.findAll());}
+    public ResponseEntity<List<MonthlySaleDto>> getAllMonthlySale() {
+        return ResponseEntity.ok(monthlySaleService.findAll());}
 
 
     @GetMapping("/{symbol}")
     public ResponseEntity<MonthlySaleDto> getMonthlySaleBySymbol(@PathVariable String symbol) {
         return ResponseEntity.ok(monthlySaleService.loadMonthlyBySymbol(symbol));
+    }
+
+
+    @GetMapping("/saveMonthlySale")
+    public ResponseEntity<MonthlySaleDto[]> saveMonthlySale() {
+        return ResponseEntity.ok(monthlySaleService.save());
     }
 
 
