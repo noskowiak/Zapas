@@ -19,8 +19,8 @@ public class StockLodzService {
     private final StockLodzRepository stockLodzRepository;
     private final StockMapper stockMapper;
 
-    public StockLodz save(StockLodz stockLodz) {
-        return stockLodzRepository.save(stockLodz);
+    public StockLodz save(StockDto stockDto) {
+        return stockLodzRepository.save(stockMapper.toEntityStockLodz(stockDto));
     }
 
     public List<StockDto> findAll() {

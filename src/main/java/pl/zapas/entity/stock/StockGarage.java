@@ -25,4 +25,9 @@ public class StockGarage {
     @ManyToOne
     private Location location;
 
+    public StockGarage(Long quantity, Product product, Location location) {
+        this.quantity = quantity;
+        this.product = product;
+        this.location = location;
+    }
 }

@@ -32,7 +32,8 @@ private  final ProductService productService;
     }
 
     @GetMapping("/saveProduct")
-    public ResponseEntity<ProductDto[]> saveMonthlySale() {
+    public ResponseEntity<ProductDto[]> saveProduct() {
+
         return ResponseEntity.ok(productService.save());
     }
 }

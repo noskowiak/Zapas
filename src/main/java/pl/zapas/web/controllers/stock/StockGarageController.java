@@ -19,8 +19,8 @@ public class StockGarageController {
     private final StockGarageService stockGarageService;
 
     @PostMapping("/add")
-    public ResponseEntity<StockGarage> saveStockGarage(StockGarage stockGarage) {
-        return ResponseEntity.ok(stockGarageService.save(stockGarage));
+    public ResponseEntity<StockGarage> saveStockGarage(@RequestBody StockDto stockDto) {
+        return ResponseEntity.ok(stockGarageService.saveStockGarage(stockDto));
     }
 
     @GetMapping

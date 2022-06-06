@@ -1,12 +1,19 @@
 package pl.zapas.mapper.stock;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import pl.zapas.dtos.stock.StockDto;
 import pl.zapas.entity.stock.*;
+import pl.zapas.service.LocationService;
+import pl.zapas.service.subiekt.ProductService;
 
 
 @Component
+@RequiredArgsConstructor
 public class StockMapper {
+
+    private final ProductService productService;
+    private final LocationService locationService;
 
     public StockDto toDto(StockAuction stockAuction) {
 
@@ -57,6 +64,52 @@ public class StockMapper {
                 stockWarehouse.getProduct().getName(),
                 stockWarehouse.getQuantity(),
                 stockWarehouse.getLocation().getName()
+        );
+    }
+
+    public StockAuction toEntityStockAuction(StockDto stockDto) {
+
+        return new StockAuction(
+                stockDto.getQuantity(),
+                productService.loadProductBySymbol(stockDto.getProductSymbol()),
+                locationService.findLocationByName(stockDto.getLocationName())
+        );
+    }
+
+    public StockBasement toEntityStockBasement(StockDto stockDto) {
+
+        return new StockBasement(
+                stockDto.getQuantity(),
+                productService.loadProductBySymbol(stockDto.getProductSymbol()),
+                locationService.findLocationByName(stockDto.getLocationName())
+        );
+    }
+
+
+    public StockGarage toEntityStockGarage(StockDto stockDto) {
+
+        return new StockGarage(
+                stockDto.getQuantity(),
+                productService.loadProductBySymbol(stockDto.getProductSymbol()),
+                locationService.findLocationByName(stockDto.getLocationName())
+        );
+    }
+
+    public StockLodz toEntityStockLodz(StockDto stockDto) {
+
+        return new StockLodz(
+                stockDto.getQuantity(),
+                productService.loadProductBySymbol(stockDto.getProductSymbol()),
+                locationService.findLocationByName(stockDto.getLocationName())
+        );
+    }
+
+    public StockWarehouse toEntityStockWarehouse(StockDto stockDto) {
+
+        return new StockWarehouse(
+                stockDto.getQuantity(),
+                productService.loadProductBySymbol(stockDto.getProductSymbol()),
+                locationService.findLocationByName(stockDto.getLocationName())
         );
     }
 

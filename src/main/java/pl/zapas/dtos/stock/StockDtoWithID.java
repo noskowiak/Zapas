@@ -9,8 +9,9 @@ import lombok.NoArgsConstructor;
 @Data
 @Getter
 @NoArgsConstructor
-public class StockDto {
+public class StockDtoWithID {
 
+    private Long id;
     private String productSymbol;
     private String productName;
     private Long quantity;

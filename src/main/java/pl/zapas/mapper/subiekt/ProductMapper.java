@@ -9,6 +9,7 @@ import pl.zapas.entity.subiekt.Product;
 public class ProductMapper {
 
     public Product toEntity (ProductDto productDto) {
+
         return new Product(productDto.getSymbol(),productDto.getName());
     }
 }

@@ -18,8 +18,9 @@ public class StockWarehouseService {
     private final StockWarehouseRepository stockWarehouseRepository;
     private final StockMapper stockMapper;
 
-    public StockWarehouse save(StockWarehouse stockWarehouse) {
-        return stockWarehouseRepository.save(stockWarehouse);
+    public StockWarehouse save(StockDto stockDto) {
+
+        return stockWarehouseRepository.save(stockMapper.toEntityStockWarehouse(stockDto));
     }
 
     public List<StockDto> findAll() {

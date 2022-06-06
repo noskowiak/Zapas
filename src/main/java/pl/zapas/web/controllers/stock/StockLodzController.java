@@ -17,8 +17,8 @@ public class StockLodzController {
     private final StockLodzService stockLodzService;
 
     @PostMapping("/add")
-    public ResponseEntity<StockLodz> saveStockLodz(StockLodz stockLodz) {
-        return ResponseEntity.ok(stockLodzService.save(stockLodz));
+    public ResponseEntity<StockLodz> saveStockLodz(@RequestBody StockDto stockDto) {
+        return ResponseEntity.ok(stockLodzService.save(stockDto));
     }
 
     @GetMapping

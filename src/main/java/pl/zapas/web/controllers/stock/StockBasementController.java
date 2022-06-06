@@ -18,8 +18,8 @@ public class StockBasementController {
     private final StockBasementService stockBasementService;
 
     @PostMapping("/add")
-    public ResponseEntity<StockBasement> saveStockBasement(StockBasement stockBasement) {
-        return ResponseEntity.ok(stockBasementService.save(stockBasement));
+    public ResponseEntity<StockBasement> saveStockBasement(@RequestBody StockDto stockDto) {
+        return ResponseEntity.ok(stockBasementService.saveStockBasement(stockDto));
     }
 
     @GetMapping

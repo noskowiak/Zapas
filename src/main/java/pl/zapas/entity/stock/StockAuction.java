@@ -27,4 +27,9 @@ public class StockAuction {
     @JoinColumn(name = "location_id")
     private Location location;
 
+    public StockAuction(Long quantity, Product product, Location location) {
+        this.quantity = quantity;
+        this.product = product;
+        this.location = location;
+    }
 }

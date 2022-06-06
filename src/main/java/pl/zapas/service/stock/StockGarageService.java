@@ -1,7 +1,9 @@
 package pl.zapas.service.stock;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 import pl.zapas.dtos.stock.StockDto;
 import pl.zapas.entity.stock.StockGarage;
 import pl.zapas.mapper.stock.StockMapper;
@@ -18,8 +20,9 @@ public class StockGarageService {
     private final StockGarageRepository stockGarageRepository;
     private final StockMapper stockMapper;
 
-    public StockGarage save(StockGarage stockGarage) {
-        return stockGarageRepository.save(stockGarage);
+    public StockGarage saveStockGarage( StockDto stockDto) {
+
+        return stockGarageRepository.save(stockMapper.toEntityStockGarage(stockDto));
     }
 
     public List<StockDto> findAll() {

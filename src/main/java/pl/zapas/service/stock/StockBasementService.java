@@ -18,8 +18,9 @@ public class StockBasementService {
     private final StockBasementRepository stockBasementRepository;
     private final StockMapper stockMapper;
 
-    public StockBasement save(StockBasement stockBasement) {
-        return stockBasementRepository.save(stockBasement);
+    public StockBasement saveStockBasement(StockDto stockDto) {
+
+        return stockBasementRepository.save(stockMapper.toEntityStockBasement(stockDto));
     }
 
     public List<StockDto> findAll() {

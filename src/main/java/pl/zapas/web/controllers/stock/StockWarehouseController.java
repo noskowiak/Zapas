@@ -18,8 +18,8 @@ public class StockWarehouseController {
     private final StockWarehouseService stockWarehouseService;
 
     @PostMapping("/add")
-    public ResponseEntity<StockWarehouse> saveStockWarehouse(StockWarehouse stockWarehouse) {
-        return ResponseEntity.ok(stockWarehouseService.save(stockWarehouse));
+    public ResponseEntity<StockWarehouse> saveStockWarehouse(@RequestBody StockDto stockDto) {
+        return ResponseEntity.ok(stockWarehouseService.save(stockDto));
     }
 
     @GetMapping
