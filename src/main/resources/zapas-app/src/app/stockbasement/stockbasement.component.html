@@ -1,0 +1,34 @@
+<div class="container h2_margin">
+  <h2>Stock Basement</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <a href="addStockBasementItem" class="btn btn-outline-info " tabindex="-1" role="button">Add Item</a>
+    </div>
+  </div>
+  <div class="card my-5" id="user-list">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">Product symbol</th>
+          <th scope="col">Product name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Location</th>
+          <th scope="col">Remove</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let stockbasement of stockbasements">
+          <td>{{ stockbasement.productSymbol }}</td>
+          <td>{{ stockbasement.productName}}</td>
+          <td>{{ stockbasement.quantity}}</td>
+          <td>{{ stockbasement.locationName}}</td>
+          <td><a (click)="OnDelete(stockbasement)"  class="btn btn-danger btn-sm rounded-15" data-placement="top" data-original-title="Delete"><i class="fa fa-times">X</i></a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

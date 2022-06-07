@@ -1,9 +1,9 @@
 <div class="container h2_margin">
-  <h2>Add Stock Items</h2>
+  <h2>Add Stock Auction Items</h2>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 <div class="card my-5">
   <div class="card-body">
-    <form (ngSubmit)="onSubmit()" #stickAuctionForm="ngForm">
+    <form (ngSubmit)="onSubmit()" #stockAuctionForm="ngForm">
 
       <div class="form-group">
         <label for="productSymbol">Product Symbol</label>
@@ -48,11 +48,11 @@
                name="location"
                placeholder="Enter location name"
                required #location="ngModel">
-        <div [hidden]="!location.pristine" class="alert alert-danger">Location is required</div>
+        <div [hidden]="!location.pristine" class="alert alert-danger">Location name is required</div>
       </div>
 
 
-      <button type="submit" [disabled]="!stickAuctionForm.form.valid"
+      <button type="submit" [disabled]="!stockAuctionForm.form.valid"
               class="btn btn-info">Submit</button>
     </form>
   </div>

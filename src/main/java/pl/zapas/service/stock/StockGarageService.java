@@ -1,10 +1,9 @@
 package pl.zapas.service.stock;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 import pl.zapas.dtos.stock.StockDto;
+import pl.zapas.dtos.stock.StockDtoWithID;
 import pl.zapas.entity.stock.StockGarage;
 import pl.zapas.mapper.stock.StockMapper;
 import pl.zapas.repository.stock.StockGarageRepository;
@@ -20,16 +19,27 @@ public class StockGarageService {
     private final StockGarageRepository stockGarageRepository;
     private final StockMapper stockMapper;
 
-    public StockGarage saveStockGarage( StockDto stockDto) {
+    public StockGarage saveStockGarage(StockDto stockDto) {
 
         return stockGarageRepository.save(stockMapper.toEntityStockGarage(stockDto));
     }
 
-    public List<StockDto> findAll() {
-        return stockGarageRepository.findAll()
+    public List<StockDtoWithID> findAll() {
+    return stockGarageRepository.findAll()
+            .stream()
+            .map(stockGarage -> new StockDtoWithID(
+                    stockGarage.getId(),
+                    stockGarage.getProduct().getSymbol(),
+                    stockGarage.getProduct().getName(),
+                    stockGarage.getQuantity(),
+                    stockGarage.getLocation().getName()
+            ))
+            .collect(Collectors.toList());
+
+        /*return stockGarageRepository.findAll()
                 .stream()
                 .map(stockMapper::toDto)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList());*/
     }
 
     public StockDto findStockGarageById(Long id) {
@@ -49,7 +59,7 @@ public class StockGarageService {
                 .collect(Collectors.toList());
     }
 
-    public boolean deleteBy(Long id) {
+    public boolean deleteById(Long id) {
         stockGarageRepository.deleteById(id);
         return true;
     }

@@ -1,0 +1,60 @@
+<div class="container h2_margin">
+  <h2>Add Stock Basement Items</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  <div class="card my-5">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #stockBasementForm="ngForm">
+
+        <div class="form-group">
+          <label for="productSymbol">Product Symbol</label>
+          <input type="text" [(ngModel)]="stockbasement.productSymbol"
+                 class="form-control"
+                 id="productSymbol"
+                 name="productSymbol"
+                 placeholder="Enter Product symbol"
+                 required #productSymbol="ngModel">
+        </div>
+        <div [hidden]="!productSymbol.pristine" class="alert alert-danger">Product symbol is required</div>
+
+
+        <div class="form-group">
+          <label for="productName">Product name</label>
+          <input type="text" [(ngModel)]="stockbasement.productName"
+                 class="form-control"
+                 id="productName"
+                 name="productName"
+                 placeholder="Enter product name"
+                 required #productName="ngModel">
+        </div>
+        <div [hidden]="!productName.pristine" class="alert alert-danger">Product name is required</div>
+
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input type="number" [(ngModel)]="stockbasement.quantity"
+                 class="form-control"
+                 id="quantity"
+                 name="quantity"
+                 placeholder="Enter quantity"
+                 required #quantity="ngModel">
+          <div [hidden]="!quantity.pristine" class="alert alert-danger">Quantity is required</div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" [(ngModel)]="stockbasement.locationName"
+                 class="form-control"
+                 id="location"
+                 name="location"
+                 placeholder="Enter location name"
+                 required #location="ngModel">
+          <div [hidden]="!location.pristine" class="alert alert-danger">Location name is required</div>
+        </div>
+
+
+        <button type="submit" [disabled]="!stockBasementForm.form.valid"
+                class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

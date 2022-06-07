@@ -3,6 +3,7 @@ package pl.zapas.service.stock;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.zapas.dtos.stock.StockDto;
+import pl.zapas.dtos.stock.StockDtoWithID;
 import pl.zapas.entity.stock.StockBasement;
 import pl.zapas.mapper.stock.StockMapper;
 import pl.zapas.repository.stock.StockBasementRepository;
@@ -23,11 +24,22 @@ public class StockBasementService {
         return stockBasementRepository.save(stockMapper.toEntityStockBasement(stockDto));
     }
 
-    public List<StockDto> findAll() {
-        return stockBasementRepository.findAll()
+    public List<StockDtoWithID> findAll() {
+       return stockBasementRepository.findAll()
+               .stream()
+               .map(stockBasement -> new StockDtoWithID(
+                       stockBasement.getId(),
+                       stockBasement.getProduct().getSymbol(),
+                       stockBasement.getProduct().getName(),
+                       stockBasement.getQuantity(),
+                       stockBasement.getLocation().getName()
+               ))
+                .collect(Collectors.toList());
+
+        /* return stockBasementRepository.findAll()
                 .stream()
                 .map(stockMapper::toDto)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList());*/
     }
 
     public StockDto findStockBasementById(Long id) {
@@ -49,7 +61,7 @@ public class StockBasementService {
                 .collect(Collectors.toList());
     }
 
-    public boolean deleteBy(Long id) {
+    public boolean deleteById(Long id) {
         stockBasementRepository.deleteById(id);
         return true;
     }
