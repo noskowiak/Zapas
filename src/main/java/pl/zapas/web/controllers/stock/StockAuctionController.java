@@ -45,7 +45,7 @@ public class StockAuctionController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> deleteStockAuction(@PathVariable Long id) {
-        return ResponseEntity.ok(stockAuctionService.deleteBy(id));
+        return ResponseEntity.ok(stockAuctionService.deleteById(id));
     }
 
 }

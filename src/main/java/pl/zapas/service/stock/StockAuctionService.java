@@ -56,17 +56,9 @@ public class StockAuctionService {
                 .collect(Collectors.toList());
     }
 
-    public boolean deleteBy(Long id) {
+    public boolean deleteById(Long id) {
         stockAuctionRepository.deleteById(id);
         return true;
     }
 
-    public StockDto deleteBySymbol(String symbol) {
-        return stockAuctionRepository.findStockAuctionsByProductSymbol(symbol)
-                .stream()
-                .map(stockMapper::toDto)
-                .findFirst()
-                .orElseThrow(NoSuchElementException::new);
-        //return true;
-    }
 }

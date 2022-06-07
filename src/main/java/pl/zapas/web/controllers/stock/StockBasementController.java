@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.zapas.dtos.stock.StockDto;
+import pl.zapas.dtos.stock.StockDtoWithID;
 import pl.zapas.entity.stock.StockBasement;
 import pl.zapas.service.stock.StockBasementService;
 
@@ -23,7 +24,7 @@ public class StockBasementController {
     }
 
     @GetMapping
-    public ResponseEntity<List<StockDto>> findAllStockBasement() {
+    public ResponseEntity<List<StockDtoWithID>> findAllStockBasement() {
         return ResponseEntity.ok(stockBasementService.findAll());
     }
 
@@ -44,7 +45,7 @@ public class StockBasementController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> deleteStockBasement(@PathVariable Long id) {
-        return ResponseEntity.ok(stockBasementService.deleteBy(id));
+        return ResponseEntity.ok(stockBasementService.deleteById(id));
     }
 }
 
