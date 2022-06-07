@@ -25,4 +25,9 @@ public class StockLodz {
     @ManyToOne
     private Location location;
 
+    public StockLodz(Long quantity, Product product, Location location) {
+        this.quantity = quantity;
+        this.product = product;
+        this.location = location;
+    }
 }

@@ -3,6 +3,8 @@ package pl.zapas.web.controllers.stock;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pl.zapas.dtos.stock.StockDto;
+import pl.zapas.dtos.stock.StockDtoWithID;
 import pl.zapas.entity.stock.StockAuction;
 import pl.zapas.service.stock.StockAuctionService;
 
@@ -17,27 +19,27 @@ public class StockAuctionController {
     private final StockAuctionService stockAuctionService;
 
     @PostMapping("/add")
-    public ResponseEntity<StockAuction> saveStockAuction(@RequestBody StockAuction stockAuction) {
-        return ResponseEntity.ok(stockAuctionService.save(stockAuction));
+    public ResponseEntity<StockAuction> saveStockAuction(@RequestBody StockDto stockDto) {
+        return ResponseEntity.ok(stockAuctionService.save(stockDto));
     }
 
     @GetMapping
-    public ResponseEntity<List<StockAuction>> findAllStockAuctions() {
+    public ResponseEntity<List<StockDtoWithID>> findAllStockAuctions() {
         return ResponseEntity.ok(stockAuctionService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<StockAuction> findStockAuctionById(@PathVariable Long id) {
+    public ResponseEntity<StockDto> findStockAuctionById(@PathVariable Long id) {
         return ResponseEntity.ok(stockAuctionService.findStockAuctionById(id));
     }
 
     @GetMapping("/{symbol}")
-    public ResponseEntity<List<StockAuction>> findStockAuctionBySymbol(@PathVariable String symbol) {
+    public ResponseEntity<List<StockDto>> findStockAuctionBySymbol(@PathVariable String symbol) {
         return ResponseEntity.ok(stockAuctionService.findStockAuctionsBySymbol(symbol));
     }
 
     @GetMapping("/{location}")
-    public ResponseEntity<List<StockAuction>> findStockAuctionByLocation(@PathVariable String location) {
+    public ResponseEntity<List<StockDto>> findStockAuctionByLocation(@PathVariable String location) {
         return ResponseEntity.ok(stockAuctionService.findStockAuctionsByLocationName(location));
     }
 
@@ -45,4 +47,5 @@ public class StockAuctionController {
     public ResponseEntity<Boolean> deleteStockAuction(@PathVariable Long id) {
         return ResponseEntity.ok(stockAuctionService.deleteBy(id));
     }
+
 }

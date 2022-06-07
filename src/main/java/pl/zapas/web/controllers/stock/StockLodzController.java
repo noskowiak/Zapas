@@ -3,6 +3,7 @@ package pl.zapas.web.controllers.stock;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pl.zapas.dtos.stock.StockDto;
 import pl.zapas.entity.stock.StockLodz;
 import pl.zapas.service.stock.StockLodzService;
 
@@ -16,27 +17,27 @@ public class StockLodzController {
     private final StockLodzService stockLodzService;
 
     @PostMapping("/add")
-    public ResponseEntity<StockLodz> saveStockLodz(StockLodz stockLodz) {
-        return ResponseEntity.ok(stockLodzService.save(stockLodz));
+    public ResponseEntity<StockLodz> saveStockLodz(@RequestBody StockDto stockDto) {
+        return ResponseEntity.ok(stockLodzService.save(stockDto));
     }
 
     @GetMapping
-    public ResponseEntity<List<StockLodz>> findAllStockLodz() {
+    public ResponseEntity<List<StockDto>> findAllStockLodz() {
         return ResponseEntity.ok(stockLodzService.findAll());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<StockLodz> findStockLodzById(@PathVariable Long id) {
+    public ResponseEntity<StockDto> findStockLodzById(@PathVariable Long id) {
         return ResponseEntity.ok(stockLodzService.findStockLodzById(id));
     }
 
     @GetMapping("/{symbol}")
-    public ResponseEntity<List<StockLodz>> findStockLodzBySymbol(@PathVariable String symbol) {
+    public ResponseEntity<List<StockDto>> findStockLodzBySymbol(@PathVariable String symbol) {
         return ResponseEntity.ok(stockLodzService.findStockLodzsBySymbol(symbol));
     }
 
     @GetMapping("/{location}")
-    public ResponseEntity<List<StockLodz>> findStockLodzByLocation(@PathVariable String location) {
+    public ResponseEntity<List<StockDto>> findStockLodzByLocation(@PathVariable String location) {
         return ResponseEntity.ok(stockLodzService.findStockLodzsByLocationName(location));
     }
 

@@ -24,6 +24,8 @@ public class LocationService {
 
     public Location save(Location location) {return locationRepository.save(location);}
 
+    public Location findLocationByName(String name) {return locationRepository.findLocationByName(name);}
+
     // TODO: 17.05.2022 saveLocation, updateName 
 
 }

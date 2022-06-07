@@ -25,4 +25,9 @@ public class StockWarehouse {
     @ManyToOne
     private Location location;
 
+    public StockWarehouse(Long quantity, Product product, Location location) {
+        this.quantity = quantity;
+        this.product = product;
+        this.location = location;
+    }
 }

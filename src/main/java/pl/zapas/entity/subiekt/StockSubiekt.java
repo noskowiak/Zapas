@@ -15,9 +15,13 @@ public class StockSubiekt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long quantity;
+    private Long stock;
 
     @OneToOne
     private Product product;
 
+    public StockSubiekt(Long stock, Product product) {
+        this.stock = stock;
+        this.product = product;
+    }
 }
